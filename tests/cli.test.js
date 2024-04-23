@@ -1,4 +1,3 @@
-// runCLI.test.js
 import fs from 'fs';
 import { beforeEach, describe, expect, test } from '@jest/globals';
 import runCLI from '../lib/index.js';
