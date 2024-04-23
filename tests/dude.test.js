@@ -1,5 +1,5 @@
-const { describe, test, expect } = require('@jest/globals');
-const { exec } = require('child_process');
+import { describe, test, expect } from '@jest/globals';
+import { exec } from 'child_process';
 
 describe('dude CLI test', () => {
   test('it should respond with "Hey dude!"', (done) => {
