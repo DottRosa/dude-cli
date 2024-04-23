@@ -1,0 +1,8 @@
+{
+  "transform": {
+    "^.+\\.js$": "babel-jest"
+  },
+  "moduleFileExtensions": ["js", "json"],
+  "testEnvironment": "node",
+  "testMatch": ["**/*.test.js"]
+}
