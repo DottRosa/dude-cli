@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import { describe, test, expect, beforeEach, afterEach } from '@jest/globals';
-import { logSuccess, logError, logInfo } from '../lib/logger';
+import logService from '../lib/logger';
 
 describe('logger functions', () => {
   // Mock log functions
@@ -28,19 +28,19 @@ describe('logger functions', () => {
 
   test('logSuccess should call console.log with the message', () => {
     const message = 'Success message';
-    logSuccess(message);
+    logService.success(message);
     expect(console.log).toHaveBeenCalledWith(message);
   });
 
   test('logError should call console.error with the message', () => {
     const message = 'Error message';
-    logError(message);
+    logService.error(message);
     expect(console.error).toHaveBeenCalledWith(message);
   });
 
   test('logInfo should call console.log with the message', () => {
     const message = 'Info message';
-    logInfo(message);
+    logService.info(message);
     expect(console.log).toHaveBeenCalledWith(message);
   });
 });
