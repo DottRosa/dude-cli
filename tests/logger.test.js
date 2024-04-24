@@ -1,11 +1,11 @@
 /* eslint-disable no-console */
 import { describe, test, expect, beforeEach, afterEach } from '@jest/globals';
+import chalk from 'chalk';
 import logService from '../lib/logger';
 
 describe('logger functions', () => {
   // Mock log functions
   const originalLog = console.log;
-  const originalError = console.error;
   let consoleOutput = [];
 
   beforeEach(() => {
@@ -21,26 +21,31 @@ describe('logger functions', () => {
   afterEach(() => {
     // Restores the original console.log and console.error functions
     console.log = originalLog;
-    console.error = originalError;
     // Reset console output after each test
     consoleOutput = [];
   });
 
-  test('logSuccess should call console.log with the message', () => {
+  test('success should call console.log with the message', () => {
     const message = 'Success message';
     logService.success(message);
-    expect(console.log).toHaveBeenCalledWith(message);
+    expect(console.log).toHaveBeenCalledWith(chalk.green(message));
   });
 
-  test('logError should call console.error with the message', () => {
+  test('error should call console.error with the message', () => {
     const message = 'Error message';
     logService.error(message);
-    expect(console.error).toHaveBeenCalledWith(message);
+    expect(console.log).toHaveBeenCalledWith(chalk.red(message));
   });
 
-  test('logInfo should call console.log with the message', () => {
+  test('info should call console.log with the message', () => {
     const message = 'Info message';
     logService.info(message);
+    expect(console.log).toHaveBeenCalledWith(chalk.blue(message));
+  });
+
+  test('standard should call console.log with the message', () => {
+    const message = 'Standard message';
+    logService.standard(message);
     expect(console.log).toHaveBeenCalledWith(message);
   });
 });
