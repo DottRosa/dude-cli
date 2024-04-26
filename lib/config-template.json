@@ -1,0 +1,19 @@
+{
+  "actions": [
+    {
+      "name": "First command",
+      "shellCommand": "echo {greeting} {name}",
+      "fields": [
+        {
+          "name": "greeting",
+          "type": "list",
+          "values": ["Hello", "Hey", "Buongiorno"]
+        },
+        {
+          "name": "name",
+          "type": "string"
+        }
+      ]
+    }
+  ]
+}
