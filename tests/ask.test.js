@@ -6,7 +6,6 @@ jest.mock('inquirer');
 
 describe('askService', () => {
   afterEach(() => {
-    // Resetta i mock dopo ogni test
     jest.clearAllMocks();
   });
 
