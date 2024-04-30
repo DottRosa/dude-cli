@@ -1,6 +1,6 @@
 import { describe, test, expect, afterEach } from '@jest/globals';
 import * as inquirer from 'inquirer';
-import askService from '../lib/ask';
+import askService from '../src/lib/ask';
 
 jest.mock('inquirer');
 

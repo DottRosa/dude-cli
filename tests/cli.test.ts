@@ -1,11 +1,11 @@
 import fs from 'fs';
 import { beforeEach, describe, expect, test } from '@jest/globals';
-import runCLI from '../lib/index.js';
-import askService from '../lib/ask.js';
+import runCLI from '../src/lib/index';
+import askService from '../src/lib/ask';
 
 jest.mock('fs');
-jest.mock('../lib/logger.js');
-jest.mock('../lib/ask.js');
+jest.mock('../src/lib/logger.ts');
+jest.mock('../src/lib/ask.ts');
 
 describe('runCLI', () => {
   beforeEach(() => {
@@ -13,8 +13,8 @@ describe('runCLI', () => {
   });
   describe('when the configuration file is missing', () => {
     test('it should create configuration file if missing', async () => {
-      fs.existsSync.mockReturnValue(false);
-      askService.confirmAction.mockResolvedValue(true);
+      jest.spyOn(fs, 'existsSync').mockReturnValue(false);
+      jest.spyOn(askService, 'confirmAction').mockResolvedValue(true);
 
       await runCLI();
 
@@ -22,8 +22,8 @@ describe('runCLI', () => {
     });
 
     test('it should not create configuration file if user declines', async () => {
-      fs.existsSync.mockReturnValue(false);
-      askService.confirmAction.mockResolvedValue(false);
+      jest.spyOn(fs, 'existsSync').mockReturnValue(false);
+      jest.spyOn(askService, 'confirmAction').mockResolvedValue(false);
 
       await runCLI();
 
@@ -33,7 +33,7 @@ describe('runCLI', () => {
 
   describe('when the configuration file is present', () => {
     test('it should read the file', async () => {
-      fs.existsSync.mockReturnValue(true);
+      jest.spyOn(fs, 'existsSync').mockReturnValue(true);
 
       await runCLI();
 

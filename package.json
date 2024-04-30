@@ -5,14 +5,15 @@
   "exports": "./lib/index.js",
   "type": "module",
   "directories": {
-    "lib": "lib"
+    "lib": "dist/lib"
   },
   "bin": {
-    "dude": "./bin/dude.js"
+    "dude": "./dist/bin/dude.js"
   },
   "scripts": {
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint . --no-cache",
+    "build": "tsc"
   },
   "keywords": [
     "CLI",
@@ -30,19 +31,27 @@
     "@jest/globals": "^29.7.0",
     "chalk": "^5.3.0",
     "commander": "^12.0.0",
-    "inquirer": "^8.2.6"
+    "inquirer": "^8.2.6",
+    "sass": "^1.75.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.24.4",
     "@eslint/eslintrc": "^3.0.2",
     "@eslint/js": "^9.1.1",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.12.7",
+    "@typescript-eslint/eslint-plugin": "^7.8.0",
+    "@typescript-eslint/parser": "^7.8.0",
     "babel-jest": "^29.7.0",
     "eslint": "^8.57.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^9.1.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-prettier": "^5.1.3",
     "globals": "^15.0.0",
-    "jest": "^29.7.0"
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.2",
+    "typescript": "^5.4.5"
   }
 }

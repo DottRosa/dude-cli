@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import { describe, test, expect, beforeEach, afterEach } from '@jest/globals';
 import chalk from 'chalk';
-import logService from '../lib/logger';
+import logService from '../dist/lib/logger';
 
 describe('logger functions', () => {
   // Mock log functions

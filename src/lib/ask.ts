@@ -2,7 +2,7 @@ import inquirer from 'inquirer';
 
 const askService = {
   // Ask user to confirm an action
-  async confirmAction(message) {
+  async confirmAction(message: string) {
     const answer = await inquirer.prompt([
       {
         type: 'confirm',
@@ -14,7 +14,7 @@ const askService = {
   },
 
   // Ask user to select one option from the list
-  async chooseOption(message, options) {
+  async chooseOption(message: string, options: string[]) {
     const answer = await inquirer.prompt([
       {
         type: 'list',
@@ -27,7 +27,7 @@ const askService = {
   },
 
   // Ask user to fill the input with a value
-  async enterValue(message) {
+  async enterValue(message: string) {
     const answer = await inquirer.prompt([
       {
         type: 'input',

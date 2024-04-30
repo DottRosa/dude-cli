@@ -1,8 +1,8 @@
 import fs from 'fs';
 import path from 'path';
-import { CONFIGURATION_FILE_NAME, HELP_MESSAGE, LOGO } from './constants.js';
-import logService from './logger.js';
-import askService from './ask.js';
+import { CONFIGURATION_FILE_NAME, HELP_MESSAGE, LOGO } from './constants';
+import logService from './logger';
+import askService from './ask';
 
 const currentDirectory = process.cwd();
 const configFilePath = path.join(currentDirectory, CONFIGURATION_FILE_NAME);
