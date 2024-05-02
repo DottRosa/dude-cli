@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { CONFIGURATION_FILE_NAME, HELP_MESSAGE, LOGO } from './constants';
-import logService from './logger';
+import LogService from './logger';
 import askService from './ask';
 
 const currentDirectory = process.cwd();
@@ -23,8 +23,8 @@ function createConfigFile() {
 }
 
 function showHelp() {
-  logService.standard(LOGO);
-  logService.standard(HELP_MESSAGE);
+  LogService.standard(LOGO);
+  LogService.standard(HELP_MESSAGE);
 }
 
 async function runCLI() {

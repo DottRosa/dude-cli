@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import { describe, test, expect, beforeEach, afterEach } from '@jest/globals';
 import chalk from 'chalk';
-import logService from '../dist/lib/logger';
+import LogService from '../dist/lib/logger';
 
 describe('logger functions', () => {
   // Mock log functions
@@ -27,25 +27,25 @@ describe('logger functions', () => {
 
   test('success should call console.log with the message', () => {
     const message = 'Success message';
-    logService.success(message);
+    LogService.success(message);
     expect(console.log).toHaveBeenCalledWith(chalk.green(message));
   });
 
   test('error should call console.error with the message', () => {
     const message = 'Error message';
-    logService.error(message);
+    LogService.error(message);
     expect(console.log).toHaveBeenCalledWith(chalk.red(message));
   });
 
   test('info should call console.log with the message', () => {
     const message = 'Info message';
-    logService.info(message);
+    LogService.info(message);
     expect(console.log).toHaveBeenCalledWith(chalk.blue(message));
   });
 
   test('standard should call console.log with the message', () => {
     const message = 'Standard message';
-    logService.standard(message);
+    LogService.standard(message);
     expect(console.log).toHaveBeenCalledWith(message);
   });
 });

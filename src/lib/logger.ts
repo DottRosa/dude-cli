@@ -1,22 +1,20 @@
 /* eslint-disable no-console */
 import chalk from 'chalk';
 
-const logService = {
-  success(message: string) {
+export default class LogService {
+  static success(message: string): void {
     console.log(chalk.green(message));
-  },
+  }
 
-  error(message: string) {
+  static error(message: string): void {
     console.log(chalk.red(message));
-  },
+  }
 
-  info(message: string) {
+  static info(message: string): void {
     console.log(chalk.blue(message));
-  },
+  }
 
-  standard(message: string) {
+  static standard(message: string): void {
     console.log(message);
-  },
-};
-
-export default logService;
+  }
+}
