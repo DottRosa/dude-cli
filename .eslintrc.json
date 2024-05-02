@@ -22,10 +22,10 @@
   },
   "plugins": [
     "prettier",
-    "@typescript-eslint"
+    "@typescript-eslint",
+    "typescript"
   ],
   "rules": {
-    "no-unused-vars": "warn",
     "eqeqeq": "error",
     "prettier/prettier": [
       "error",
@@ -33,7 +33,8 @@
         "singleQuote": true
       }
     ],
-    "import/extensions": "off"
+    "import/extensions": "off",
+    "no-shadow": "off",
   },
   "globals": {
     "jest": "readonly"
