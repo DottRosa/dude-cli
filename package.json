@@ -13,7 +13,7 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint . --no-cache",
-    "build": "tsc"
+    "build": "tsc && node post-build.js"
   },
   "keywords": [
     "CLI",
