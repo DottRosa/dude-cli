@@ -34,7 +34,7 @@
       }
     ],
     "import/extensions": "off",
-    "no-shadow": "off",
+    "no-shadow": "off"
   },
   "globals": {
     "jest": "readonly"
