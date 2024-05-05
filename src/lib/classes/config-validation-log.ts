@@ -1,14 +1,16 @@
 import { CONFIG_VALIDATION_LOG_LEVEL_ENUM } from '../enums';
 import {
-  CONFIG_VALIDATION_LOG_FIELD_TYPE_TYPES,
+  CONFIG_VALIDATION_LOG_PROPERTY_TYPE_TYPES,
   CONFIG_VALIDATION_LOG_LEVEL_TYPES,
   CONFIG_VALIDATION_LOG_MESSAGE_TYPE_TYPES,
 } from '../types';
 
 export default class ConfigValidationLog {
-  fieldType: CONFIG_VALIDATION_LOG_FIELD_TYPE_TYPES; // the type of the property involved
+  path: string; // the id of the ConfigField or the ConfigAction
 
-  fieldInvolvedName: string; // the name of the field involved in the log
+  propertyType: CONFIG_VALIDATION_LOG_PROPERTY_TYPE_TYPES; // the type of the property involved
+
+  propertyInvolvedName: string; // the name of the field involved in the log
 
   level: CONFIG_VALIDATION_LOG_LEVEL_TYPES; // the level of the log
 
@@ -25,16 +27,18 @@ export default class ConfigValidationLog {
   };
 
   constructor(
-    fieldType: CONFIG_VALIDATION_LOG_FIELD_TYPE_TYPES,
-    fieldInvolvedName: string,
+    path: string,
+    propertyType: CONFIG_VALIDATION_LOG_PROPERTY_TYPE_TYPES,
+    propertyInvolvedName: string,
     messageType: CONFIG_VALIDATION_LOG_MESSAGE_TYPE_TYPES,
     suggestedValues: string[] = [],
     level: CONFIG_VALIDATION_LOG_LEVEL_TYPES = CONFIG_VALIDATION_LOG_LEVEL_ENUM.ERROR,
   ) {
-    this.fieldType = fieldType;
-    this.fieldInvolvedName = fieldInvolvedName;
+    this.propertyType = propertyType;
+    this.propertyInvolvedName = propertyInvolvedName;
     this.messageType = messageType;
     this.suggestedValues = suggestedValues;
+    this.path = path;
     this.level = level;
   }
 
@@ -43,8 +47,9 @@ export default class ConfigValidationLog {
     if (!message) {
       return this.messages.generic_error;
     }
-    return message
-      .replace('{field}', this.fieldInvolvedName)
-      .replace('{suggestedValues}', `"${this.suggestedValues.join('", "')}"`);
+    return `[${this.path}] ${message
+      .replace('{field}', this.propertyInvolvedName)
+      .replace('{id}', this.path)
+      .replace('{suggestedValues}', `"${this.suggestedValues.join('", "')}"`)}`;
   }
 }

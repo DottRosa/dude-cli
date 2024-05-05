@@ -15,7 +15,7 @@ export enum CONFIG_VALIDATION_LOG_MESSAGE_TYPES_ENUM {
   EMPTY_LIST = 'empty_list',
 }
 
-export enum CONFIG_VALIDATION_LOG_MESSAGE_FIELD_TYPES_ENUM {
+export enum CONFIG_VALIDATION_LOG_PROPERTY_TYPES_ENUM {
   STRING = 'string',
   BOOLEAN = 'boolean',
   LIST = 'list',
