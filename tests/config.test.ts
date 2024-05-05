@@ -3,7 +3,7 @@ import ConfigService from '../src/lib/config';
 import ConfigValidationLog from '../src/lib/classes/config-validation-log';
 import {
   CONFIG_VALIDATION_LOG_LEVEL_ENUM,
-  CONFIG_VALIDATION_LOG_MESSAGE_FIELD_TYPES_ENUM,
+  CONFIG_VALIDATION_LOG_PROPERTY_TYPES_ENUM,
   CONFIG_VALIDATION_LOG_MESSAGE_TYPES_ENUM,
 } from '../src/lib/enums';
 
@@ -18,7 +18,8 @@ describe('configService', () => {
       expect(configService.logs.length).toBe(0);
 
       const log = new ConfigValidationLog(
-        CONFIG_VALIDATION_LOG_MESSAGE_FIELD_TYPES_ENUM.STRING,
+        'path',
+        CONFIG_VALIDATION_LOG_PROPERTY_TYPES_ENUM.STRING,
         'rapa',
         CONFIG_VALIDATION_LOG_MESSAGE_TYPES_ENUM.MISSING_FIELD,
       );
@@ -34,13 +35,15 @@ describe('configService', () => {
       expect(configService.errorLogsExist).toBe(false);
 
       const errorLog = new ConfigValidationLog(
-        CONFIG_VALIDATION_LOG_MESSAGE_FIELD_TYPES_ENUM.STRING,
+        'path',
+        CONFIG_VALIDATION_LOG_PROPERTY_TYPES_ENUM.STRING,
         'rapa',
         CONFIG_VALIDATION_LOG_MESSAGE_TYPES_ENUM.MISSING_FIELD,
       );
 
       const infoLog = new ConfigValidationLog(
-        CONFIG_VALIDATION_LOG_MESSAGE_FIELD_TYPES_ENUM.STRING,
+        'path',
+        CONFIG_VALIDATION_LOG_PROPERTY_TYPES_ENUM.STRING,
         'rapa',
         CONFIG_VALIDATION_LOG_MESSAGE_TYPES_ENUM.MISSING_FIELD,
         [],
@@ -48,7 +51,9 @@ describe('configService', () => {
       );
 
       const warningLog = new ConfigValidationLog(
-        CONFIG_VALIDATION_LOG_MESSAGE_FIELD_TYPES_ENUM.STRING,
+        'path',
+
+        CONFIG_VALIDATION_LOG_PROPERTY_TYPES_ENUM.STRING,
         'rapa',
         CONFIG_VALIDATION_LOG_MESSAGE_TYPES_ENUM.MISSING_FIELD,
         [],
@@ -66,7 +71,8 @@ describe('configService', () => {
       expect(configService.errorLogsExist).toBe(false);
 
       const infoLog = new ConfigValidationLog(
-        CONFIG_VALIDATION_LOG_MESSAGE_FIELD_TYPES_ENUM.STRING,
+        'path',
+        CONFIG_VALIDATION_LOG_PROPERTY_TYPES_ENUM.STRING,
         'rapa',
         CONFIG_VALIDATION_LOG_MESSAGE_TYPES_ENUM.MISSING_FIELD,
         [],
@@ -74,7 +80,8 @@ describe('configService', () => {
       );
 
       const warningLog = new ConfigValidationLog(
-        CONFIG_VALIDATION_LOG_MESSAGE_FIELD_TYPES_ENUM.STRING,
+        'path',
+        CONFIG_VALIDATION_LOG_PROPERTY_TYPES_ENUM.STRING,
         'rapa',
         CONFIG_VALIDATION_LOG_MESSAGE_TYPES_ENUM.MISSING_FIELD,
         [],
@@ -93,13 +100,15 @@ describe('configService', () => {
       expect(configService.warningLogsExist).toBe(false);
 
       const errorLog = new ConfigValidationLog(
-        CONFIG_VALIDATION_LOG_MESSAGE_FIELD_TYPES_ENUM.STRING,
+        'path',
+        CONFIG_VALIDATION_LOG_PROPERTY_TYPES_ENUM.STRING,
         'rapa',
         CONFIG_VALIDATION_LOG_MESSAGE_TYPES_ENUM.MISSING_FIELD,
       );
 
       const infoLog = new ConfigValidationLog(
-        CONFIG_VALIDATION_LOG_MESSAGE_FIELD_TYPES_ENUM.STRING,
+        'path',
+        CONFIG_VALIDATION_LOG_PROPERTY_TYPES_ENUM.STRING,
         'rapa',
         CONFIG_VALIDATION_LOG_MESSAGE_TYPES_ENUM.MISSING_FIELD,
         [],
@@ -107,7 +116,8 @@ describe('configService', () => {
       );
 
       const warningLog = new ConfigValidationLog(
-        CONFIG_VALIDATION_LOG_MESSAGE_FIELD_TYPES_ENUM.STRING,
+        'path',
+        CONFIG_VALIDATION_LOG_PROPERTY_TYPES_ENUM.STRING,
         'rapa',
         CONFIG_VALIDATION_LOG_MESSAGE_TYPES_ENUM.MISSING_FIELD,
         [],
@@ -125,7 +135,8 @@ describe('configService', () => {
       expect(configService.warningLogsExist).toBe(false);
 
       const infoLog = new ConfigValidationLog(
-        CONFIG_VALIDATION_LOG_MESSAGE_FIELD_TYPES_ENUM.STRING,
+        'path',
+        CONFIG_VALIDATION_LOG_PROPERTY_TYPES_ENUM.STRING,
         'rapa',
         CONFIG_VALIDATION_LOG_MESSAGE_TYPES_ENUM.MISSING_FIELD,
         [],
@@ -133,7 +144,8 @@ describe('configService', () => {
       );
 
       const errorLog = new ConfigValidationLog(
-        CONFIG_VALIDATION_LOG_MESSAGE_FIELD_TYPES_ENUM.STRING,
+        'path',
+        CONFIG_VALIDATION_LOG_PROPERTY_TYPES_ENUM.STRING,
         'rapa',
         CONFIG_VALIDATION_LOG_MESSAGE_TYPES_ENUM.MISSING_FIELD,
       );
@@ -150,13 +162,15 @@ describe('configService', () => {
       expect(configService.infoLogsExist).toBe(false);
 
       const errorLog = new ConfigValidationLog(
-        CONFIG_VALIDATION_LOG_MESSAGE_FIELD_TYPES_ENUM.STRING,
+        'path',
+        CONFIG_VALIDATION_LOG_PROPERTY_TYPES_ENUM.STRING,
         'rapa',
         CONFIG_VALIDATION_LOG_MESSAGE_TYPES_ENUM.MISSING_FIELD,
       );
 
       const infoLog = new ConfigValidationLog(
-        CONFIG_VALIDATION_LOG_MESSAGE_FIELD_TYPES_ENUM.STRING,
+        'path',
+        CONFIG_VALIDATION_LOG_PROPERTY_TYPES_ENUM.STRING,
         'rapa',
         CONFIG_VALIDATION_LOG_MESSAGE_TYPES_ENUM.MISSING_FIELD,
         [],
@@ -164,7 +178,8 @@ describe('configService', () => {
       );
 
       const warningLog = new ConfigValidationLog(
-        CONFIG_VALIDATION_LOG_MESSAGE_FIELD_TYPES_ENUM.STRING,
+        'path',
+        CONFIG_VALIDATION_LOG_PROPERTY_TYPES_ENUM.STRING,
         'rapa',
         CONFIG_VALIDATION_LOG_MESSAGE_TYPES_ENUM.MISSING_FIELD,
         [],
@@ -182,7 +197,8 @@ describe('configService', () => {
       expect(configService.infoLogsExist).toBe(false);
 
       const warningLog = new ConfigValidationLog(
-        CONFIG_VALIDATION_LOG_MESSAGE_FIELD_TYPES_ENUM.STRING,
+        'path',
+        CONFIG_VALIDATION_LOG_PROPERTY_TYPES_ENUM.STRING,
         'rapa',
         CONFIG_VALIDATION_LOG_MESSAGE_TYPES_ENUM.MISSING_FIELD,
         [],
@@ -190,7 +206,8 @@ describe('configService', () => {
       );
 
       const errorLog = new ConfigValidationLog(
-        CONFIG_VALIDATION_LOG_MESSAGE_FIELD_TYPES_ENUM.STRING,
+        'path',
+        CONFIG_VALIDATION_LOG_PROPERTY_TYPES_ENUM.STRING,
         'rapa',
         CONFIG_VALIDATION_LOG_MESSAGE_TYPES_ENUM.MISSING_FIELD,
       );
@@ -207,13 +224,15 @@ describe('configService', () => {
       expect(configService.errorLogMessages).toEqual([]);
 
       const errorLog = new ConfigValidationLog(
-        CONFIG_VALIDATION_LOG_MESSAGE_FIELD_TYPES_ENUM.STRING,
+        'path',
+        CONFIG_VALIDATION_LOG_PROPERTY_TYPES_ENUM.STRING,
         'rapa',
         CONFIG_VALIDATION_LOG_MESSAGE_TYPES_ENUM.MISSING_FIELD,
       );
 
       const infoLog = new ConfigValidationLog(
-        CONFIG_VALIDATION_LOG_MESSAGE_FIELD_TYPES_ENUM.STRING,
+        'path',
+        CONFIG_VALIDATION_LOG_PROPERTY_TYPES_ENUM.STRING,
         'rapa',
         CONFIG_VALIDATION_LOG_MESSAGE_TYPES_ENUM.MISSING_FIELD,
         [],
@@ -221,7 +240,8 @@ describe('configService', () => {
       );
 
       const warningLog = new ConfigValidationLog(
-        CONFIG_VALIDATION_LOG_MESSAGE_FIELD_TYPES_ENUM.STRING,
+        'path',
+        CONFIG_VALIDATION_LOG_PROPERTY_TYPES_ENUM.STRING,
         'rapa',
         CONFIG_VALIDATION_LOG_MESSAGE_TYPES_ENUM.MISSING_FIELD,
         [],
@@ -239,7 +259,8 @@ describe('configService', () => {
       expect(configService.errorLogMessages).toEqual([]);
 
       const infoLog = new ConfigValidationLog(
-        CONFIG_VALIDATION_LOG_MESSAGE_FIELD_TYPES_ENUM.STRING,
+        'path',
+        CONFIG_VALIDATION_LOG_PROPERTY_TYPES_ENUM.STRING,
         'rapa',
         CONFIG_VALIDATION_LOG_MESSAGE_TYPES_ENUM.MISSING_FIELD,
         [],
@@ -247,7 +268,8 @@ describe('configService', () => {
       );
 
       const warningLog = new ConfigValidationLog(
-        CONFIG_VALIDATION_LOG_MESSAGE_FIELD_TYPES_ENUM.STRING,
+        'path',
+        CONFIG_VALIDATION_LOG_PROPERTY_TYPES_ENUM.STRING,
         'rapa',
         CONFIG_VALIDATION_LOG_MESSAGE_TYPES_ENUM.MISSING_FIELD,
         [],
@@ -266,13 +288,15 @@ describe('configService', () => {
       expect(configService.warningLogMessages).toEqual([]);
 
       const errorLog = new ConfigValidationLog(
-        CONFIG_VALIDATION_LOG_MESSAGE_FIELD_TYPES_ENUM.STRING,
+        'path',
+        CONFIG_VALIDATION_LOG_PROPERTY_TYPES_ENUM.STRING,
         'rapa',
         CONFIG_VALIDATION_LOG_MESSAGE_TYPES_ENUM.MISSING_FIELD,
       );
 
       const infoLog = new ConfigValidationLog(
-        CONFIG_VALIDATION_LOG_MESSAGE_FIELD_TYPES_ENUM.STRING,
+        'path',
+        CONFIG_VALIDATION_LOG_PROPERTY_TYPES_ENUM.STRING,
         'rapa',
         CONFIG_VALIDATION_LOG_MESSAGE_TYPES_ENUM.MISSING_FIELD,
         [],
@@ -280,7 +304,8 @@ describe('configService', () => {
       );
 
       const warningLog = new ConfigValidationLog(
-        CONFIG_VALIDATION_LOG_MESSAGE_FIELD_TYPES_ENUM.STRING,
+        'path',
+        CONFIG_VALIDATION_LOG_PROPERTY_TYPES_ENUM.STRING,
         'rapa',
         CONFIG_VALIDATION_LOG_MESSAGE_TYPES_ENUM.MISSING_FIELD,
         [],
@@ -298,7 +323,8 @@ describe('configService', () => {
       expect(configService.warningLogMessages).toEqual([]);
 
       const infoLog = new ConfigValidationLog(
-        CONFIG_VALIDATION_LOG_MESSAGE_FIELD_TYPES_ENUM.STRING,
+        'path',
+        CONFIG_VALIDATION_LOG_PROPERTY_TYPES_ENUM.STRING,
         'rapa',
         CONFIG_VALIDATION_LOG_MESSAGE_TYPES_ENUM.MISSING_FIELD,
         [],
@@ -306,7 +332,8 @@ describe('configService', () => {
       );
 
       const errorLog = new ConfigValidationLog(
-        CONFIG_VALIDATION_LOG_MESSAGE_FIELD_TYPES_ENUM.STRING,
+        'path',
+        CONFIG_VALIDATION_LOG_PROPERTY_TYPES_ENUM.STRING,
         'rapa',
         CONFIG_VALIDATION_LOG_MESSAGE_TYPES_ENUM.MISSING_FIELD,
       );
@@ -323,13 +350,15 @@ describe('configService', () => {
       expect(configService.infoLogMessages).toEqual([]);
 
       const errorLog = new ConfigValidationLog(
-        CONFIG_VALIDATION_LOG_MESSAGE_FIELD_TYPES_ENUM.STRING,
+        'path',
+        CONFIG_VALIDATION_LOG_PROPERTY_TYPES_ENUM.STRING,
         'rapa',
         CONFIG_VALIDATION_LOG_MESSAGE_TYPES_ENUM.MISSING_FIELD,
       );
 
       const infoLog = new ConfigValidationLog(
-        CONFIG_VALIDATION_LOG_MESSAGE_FIELD_TYPES_ENUM.STRING,
+        'path',
+        CONFIG_VALIDATION_LOG_PROPERTY_TYPES_ENUM.STRING,
         'rapa',
         CONFIG_VALIDATION_LOG_MESSAGE_TYPES_ENUM.MISSING_FIELD,
         [],
@@ -337,7 +366,8 @@ describe('configService', () => {
       );
 
       const warningLog = new ConfigValidationLog(
-        CONFIG_VALIDATION_LOG_MESSAGE_FIELD_TYPES_ENUM.STRING,
+        'path',
+        CONFIG_VALIDATION_LOG_PROPERTY_TYPES_ENUM.STRING,
         'rapa',
         CONFIG_VALIDATION_LOG_MESSAGE_TYPES_ENUM.MISSING_FIELD,
         [],
@@ -355,7 +385,8 @@ describe('configService', () => {
       expect(configService.infoLogMessages).toEqual([]);
 
       const warningLog = new ConfigValidationLog(
-        CONFIG_VALIDATION_LOG_MESSAGE_FIELD_TYPES_ENUM.STRING,
+        'path',
+        CONFIG_VALIDATION_LOG_PROPERTY_TYPES_ENUM.STRING,
         'rapa',
         CONFIG_VALIDATION_LOG_MESSAGE_TYPES_ENUM.MISSING_FIELD,
         [],
@@ -363,7 +394,8 @@ describe('configService', () => {
       );
 
       const errorLog = new ConfigValidationLog(
-        CONFIG_VALIDATION_LOG_MESSAGE_FIELD_TYPES_ENUM.STRING,
+        'path',
+        CONFIG_VALIDATION_LOG_PROPERTY_TYPES_ENUM.STRING,
         'rapa',
         CONFIG_VALIDATION_LOG_MESSAGE_TYPES_ENUM.MISSING_FIELD,
       );
